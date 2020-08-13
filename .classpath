@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/Libs/toolkitlibrarys/Release_6/ETSI_TS_102_241_v6.9.0/lib/102241_Annex_D.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/D:/Libs/toolkitlibrarys/Release_6/ETSI_TS_102_241_v6.9.0/doc/api/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Libs/toolkitlibrarys/Release_6/3GPP_TS_31.130_v6.3.0/lib/31130_Annex_D.jar">   
+		<attributes>
+			<attribute name="javadoc_location" value="file:/D:/Libs/toolkitlibrarys/Release_6/3GPP_TS_31.130_v6.3.0/doc/api/"/>
+		</attributes>
+	</classpathentry>
+			<!-- JavaCard Development Kit 2.2.1 -->
+	<classpathentry kind="con" path="JCDK2.2.2"/>
+	<classpathentry kind="output" path="src"/>
+</classpath>

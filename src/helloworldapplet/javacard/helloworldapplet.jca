@@ -1,0 +1,209 @@
+// converted by version 1.3
+// on Fri Jul 24 14:07:44 IST 2015
+
+.package helloworldapplet {
+	.aid 0xA0:0x0:0x0:0x0:0x18:0x53:0x7:0x0:0x0:0x0:0x0:0x40;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.3;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x9:0x0:0x5:0xFF:0xFF:0xFF:0xFF:0x89:0x12:0x0:0x0:0x0 1.0;		//uicc/toolkit
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x18:0x53:0x7:0x0:0x0:0x0:0x0:0x41 helloWorldApplet;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef 1.9 helloWorldApplet/toolkitRegistry;
+		// 1
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 2
+		staticMethodRef 1.16.0()Luicc/toolkit/ToolkitRegistry;;		// uicc/toolkit/ToolkitRegistrySystem.getEntry()Luicc/toolkit/ToolkitRegistry;
+			.descriptor	Luicc/toolkit/ToolkitRegistry;	1.9;
+
+		// 3
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 4
+		classRef 1.9;		// uicc/toolkit/ToolkitRegistry
+		// 5
+		classRef helloWorldApplet;
+		// 6
+		staticMethodRef helloWorldApplet/<init>()V;
+		// 7
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 8
+		virtualMethodRef 0.10.1()[B;		// getBuffer()[B
+		// 9
+		staticMethodRef 0.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 10
+		staticMethodRef helloWorldApplet/processDT()V;
+		// 11
+		staticMethodRef 1.14.0()Luicc/toolkit/ProactiveHandler;;		// uicc/toolkit/ProactiveHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveHandler;
+			.descriptor	Luicc/toolkit/ProactiveHandler;	1.5;
+
+		// 12
+		staticMethodRef 1.17.0()Luicc/toolkit/ProactiveResponseHandler;;		// uicc/toolkit/ProactiveResponseHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveResponseHandler;
+			.descriptor	Luicc/toolkit/ProactiveResponseHandler;	1.6;
+
+		// 13
+		classRef 1.5;		// uicc/toolkit/ProactiveHandler
+		// 14
+		staticFieldRef byte[] helloWorldApplet/msg;
+	}
+
+	.class public helloWorldApplet 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.shareable;
+
+		.fields {
+			private 1.9 toolkitRegistry 0;		// Luicc/toolkit/ToolkitRegistry;
+			protected static helloWorldApplet instance 0;		// Lhelloworldapplet/helloWorldApplet;
+			private static final byte DT_CQ = -127;		// B
+			private static final byte DCS_8_BIT_DATA = 4;		// B
+			private static final byte VALUE_ZERO = 0;		// B
+			private static final byte OFFSET_ZERO = 0;		// B
+			private static final byte[] msg = {84,104,105,115,32,105,115,32,102,105,114,115,116,32,72,101,108,108,111,32,102,111,114,109,32,71,108,111,98,101,84,111,117,99,104,33,33,33};		// [B
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			processToolkit(S)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 0.2 { 		// javacard/framework/Shareable
+			}
+
+			.interface 1.8 { 		// uicc/toolkit/ToolkitInterface
+				8;		// processToolkit(S)V
+			}
+
+			.interface 1.7 { 		// uicc/toolkit/ToolkitConstants
+			}
+
+		}
+
+		.method public <init>()V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 3;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					invokevirtual 1;		// register()V
+					aload_0;
+					invokestatic 2;		// uicc/toolkit/ToolkitRegistrySystem.getEntry()Luicc/toolkit/ToolkitRegistry;
+					putfield_a 0;		// reference helloworldapplet/helloWorldApplet.toolkitRegistry
+					getfield_a_this 0;		// reference helloworldapplet/helloWorldApplet.toolkitRegistry
+					sconst_1;
+					invokeinterface 2 4 0;		// uicc/toolkit/ToolkitRegistry
+					getfield_a_this 0;		// reference helloworldapplet/helloWorldApplet.toolkitRegistry
+					bspush 127;
+					invokeinterface 2 4 0;		// uicc/toolkit/ToolkitRegistry
+					return;
+		}
+
+		.method public static install([BSB)V 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	new 5;		// helloworldapplet/helloWorldApplet
+					invokespecial 6;		// helloworldapplet/helloWorldApplet.<init>()V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 1;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 7;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 8;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_0;
+					baload;
+					ifeq L4;
+				L3:	sspush 28160;
+					invokestatic 9;		// javacard/framework/ISOException.throwIt(S)V
+				L4:	aload_2;
+					sconst_1;
+					baload;
+					bspush 68;
+					if_scmpeq L6;
+				L5:	sspush 27904;
+					invokestatic 9;		// javacard/framework/ISOException.throwIt(S)V
+				L6:	aload_0;
+					invokespecial 10;		// helloworldapplet/helloWorldApplet.processDT()V
+					return;
+		}
+
+		.method private processDT()V {
+			.stack 6;
+			.locals 3;
+
+				L0:	invokestatic 11;		// uicc/toolkit/ProactiveHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveHandler;
+					astore_1;
+					invokestatic 12;		// uicc/toolkit/ProactiveResponseHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveResponseHandler;
+					astore_2;
+					aload_1;
+					bspush 38;
+					sconst_0;
+					bspush -126;
+					invokeinterface 4 13 23;		// uicc/toolkit/ProactiveHandler
+					aload_1;
+					invokeinterface 1 13 24;		// uicc/toolkit/ProactiveHandler
+					pop;
+					invokestatic 11;		// uicc/toolkit/ProactiveHandlerSystem.getTheHandler()Luicc/toolkit/ProactiveHandler;
+					astore_3;
+					aload_1;
+					bspush 33;
+					bspush -127;
+					bspush -126;
+					invokeinterface 4 13 23;		// uicc/toolkit/ProactiveHandler
+					aload_1;
+					bspush 13;
+					sconst_4;
+					getstatic_a 14;		// reference helloworldapplet/helloWorldApplet.msg
+					sconst_0;
+					getstatic_a 14;		// reference helloworldapplet/helloWorldApplet.msg
+					arraylength;
+					invokeinterface 6 13 21;		// uicc/toolkit/ProactiveHandler
+					aload_1;
+					invokeinterface 1 13 24;		// uicc/toolkit/ProactiveHandler
+					pop;
+					return;
+		}
+
+		.method public processToolkit(S)V 8 {
+			.stack 1;
+			.locals 0;
+
+				L0:	sload_1;
+					stableswitch L2 1 1 L1;
+				L1:	aload_0;
+					invokespecial 10;		// helloworldapplet/helloWorldApplet.processDT()V
+				L2:	return;
+		}
+
+	}
+
+}
